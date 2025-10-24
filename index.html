@@ -1,44 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-	<meta charset="utf-8"/>
-	<title>Little Boat</title>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Little Boat</title>
+  <!-- Google Fonts: Inter (latin) + Noto Sans SC (chinese) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+  :root{
+    --bg:#F6F5F8;
+    --primary:#6D4BA7; /* deep lavender */
+    --accent:#F6A623; /* warm accent */
+    --muted:#7B7B7B;
+    --card:#FFFFFF;
+    --glass: rgba(255,255,255,0.12);
+    --max-width: 980px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;padding:0;font-family:'Noto Sans SC','Inter',"Microsoft Yahei",sans-serif;background:var(--bg);color:#333}
+
+  /* ======= header ======= */
+  #head{
+    width:100%;
+    min-height:360px;
+    padding:28px 20px;
+    background-image: linear-gradient(180deg, rgba(109,75,167,0.95) 0%, rgba(141,110,188,0.85) 45%, rgba(246,246,250,0) 100%), url('');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    color:white;
+  }
+
+  .top-row{width:100%;max-width:var(--max-width);display:flex;align-items:center;justify-content:space-between}
+  #top{font-weight:700;color:white;text-decoration:none;font-size:18px;letter-spacing:1px}
+
+  /* navigation */
+  #navigation{list-style:none;display:flex;gap:22px;margin:0;padding:0}
+  #navigation a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .18s ease}
+  #navigation a:hover{backdrop-filter:blur(6px);background:rgba(255,255,255,0.08);transform:translateY(-2px)}
+
+  /* hero */
+  .hero{width:100%;max-width:var(--max-width);text-align:center;margin-top:26px}
+  .hero h1{font-size:48px;margin:18px 0 8px;letter-spacing:6px;font-weight:700}
+  .hero p{margin:0 auto;max-width:680px;font-size:16px;color:rgba(255,255,255,0.92);line-height:1.6}
+  #xiahuaxian{width:120px;height:6px;background:linear-gradient(90deg,var(--accent),#FFD37A);border-radius:6px;margin:14px auto}
+
+  /* content area */
+  #content{width:100%;max-width:var(--max-width);margin:36px auto;padding:20px}
+  .paragraph{background:linear-gradient(180deg,rgba(255,255,255,0.9),var(--card));border-radius:14px;box-shadow:0 6px 18px rgba(28,20,40,0.06);overflow:hidden;margin-bottom:18px}
+  .paragraph h3{font-weight:600;font-size:24px;padding:22px 20px 6px;color:var(--primary);text-align:left}
+  .paragraph p{padding:0 20px 22px;color:var(--muted);line-height:1.8;font-size:15px}
+
+  /* footer */
+  #footer{width:100%;padding:24px 0;background:transparent;border-top:1px solid rgba(34,34,34,0.04)}
+  #footer span{display:block;text-align:center;color:var(--muted);font-size:13px}
+
+  /* to-top button */
+  #to-top{position:fixed;right:28px;bottom:28px;width:52px;height:52px;border-radius:10px;background:linear-gradient(180deg,#fff, #f3f3f6);box-shadow:0 6px 18px rgba(40,30,60,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:0;transform:translateY(16px);transition:all .25s ease}
+  #to-top.show{opacity:1;transform:none}
+  #to-top::after{content:'↑';font-weight:700;color:var(--primary)}
+
+  /* responsive */
+  @media (max-width:720px){
+    .hero h1{font-size:34px}
+    #navigation{gap:12px}
+    .paragraph h3{font-size:20px}
+    #content{padding:12px}
+  }
+  </style>
 </head>
 
 <body>
+  <header id="head">
+    <div class="top-row">
+      <a id="top" href="/">Little Boat</a>
+      <nav>
+        <ul id="navigation">
+          <li><a href="/">Home</a></li>
+          <li><a href="/html/archive.html">Archive</a></li>
+          <li><a href="/html/about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
 
-	<div id="head">
-		<a href="http://littleboatfilm.com" id="top">Little Boat</a>
-		<ul id="navigation">
-			<li><a href="http://www.littleboatfilm.com">Home</a></li>
-			<li><a href="http://www.littleboatfilm.com/html/archive.html">Archive</a></li>
-			<li><a href="http://www.littleboatfilm.com/html/about.html">About</a></li>
-		</ul>
-		<h1>welcome</h1>
-		<div id="xiahuaxian"> </div>
-		
-	</div>
+    <div class="hero">
+      <h1>welcome</h1>
+      <div id="xiahuaxian"> </div>
+      <p>这是一个简单、优雅的小站。用更清晰的排版、柔和配色与适配移动端的布局，让访问体验更轻松。</p>
+    </div>
+  </header>
 
-	<div id="content">
-		<div class="paragraph">
-			<h3>关于网站</h3>
-			<p>
-		            这是一个网站
-			</p>
-		</div>
-		<div class="paragraph">
-			<h3>关于域名</h3>
-			<p>
-			    域名
-			</p>
-		</div>
-	</div>
+  <main id="content">
+    <section class="paragraph">
+      <h3>关于网站</h3>
+      <p>这是一个网站。你可以把这里当作个人作品集、博客或电影档案页。页面使用卡片式排版，增加呼吸感，并在移动端自动适配。</p>
+    </section>
 
-	<div id="footer">
-		<span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
-	</div>
+    <section class="paragraph">
+      <h3>关于域名</h3>
+      <p>域名是你在网络上的门牌号。推荐使用稳定的 DNS 提供商并开启 HTTPS（Let's Encrypt / Cloudflare 等），以提升访问速度与安全性。</p>
+    </section>
+  </main>
 
-	<a id="to-top" href="#head" target="_self"> </a>
+  <footer id="footer">
+    <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
+  </footer>
+
+  <a id="to-top" href="#head" aria-label="回到顶部"></a>
+
+  <script>
+    // show/hide to-top on scroll
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 220) toTop.classList.add('show');
+      else toTop.classList.remove('show');
+    });
+
+    // smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
 </body>
 </html>
