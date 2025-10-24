@@ -4,28 +4,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Little Boat</title>
-  <!-- Google Fonts: Inter (latin) + Noto Sans SC (chinese) -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
 
   <style>
   :root{
-    --bg:#F6F5F8;
-    --primary:#6D4BA7; /* deep lavender */
-    --accent:#F6A623; /* warm accent */
-    --muted:#7B7B7B;
-    --card:#FFFFFF;
-    --glass: rgba(255,255,255,0.12);
+    --bg:#F4F8FB;              /* 柔和浅蓝背景 */
+    --primary:#4A77B1;         /* 主色：蓝灰调 */
+    --accent:#5AB0F3;          /* 点缀色：天蓝 */
+    --muted:#5C6975;           /* 灰蓝文字 */
+    --card:#FFFFFF;             /* 卡片白 */
     --max-width: 980px;
   }
-  *{box-sizing:border-box}
-  html,body{height:100%;margin:0;padding:0;font-family:'Noto Sans SC','Inter',"Microsoft Yahei",sans-serif;background:var(--bg);color:#333}
+
+  *{box-sizing:border-box;}
+  html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    font-family:'Noto Sans SC','Inter',"Microsoft Yahei",sans-serif;
+    background:var(--bg);
+    color:#333;
+  }
 
   /* ======= header ======= */
   #head{
     width:100%;
     min-height:360px;
     padding:28px 20px;
-    background-image: linear-gradient(180deg, rgba(109,75,167,0.95) 0%, rgba(141,110,188,0.85) 45%, rgba(246,246,250,0) 100%), url('');
+    background-image: linear-gradient(180deg, rgba(74,119,177,0.9) 0%, rgba(118,161,214,0.8) 45%, rgba(244,248,251,0) 100%),
+                      url('');
     background-size:cover;
     background-position:center;
     display:flex;
@@ -35,41 +43,151 @@
     color:white;
   }
 
-  .top-row{width:100%;max-width:var(--max-width);display:flex;align-items:center;justify-content:space-between}
-  #top{font-weight:700;color:white;text-decoration:none;font-size:18px;letter-spacing:1px}
+  .top-row{
+    width:100%;
+    max-width:var(--max-width);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  #top{
+    font-weight:700;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    letter-spacing:1px;
+  }
 
   /* navigation */
-  #navigation{list-style:none;display:flex;gap:22px;margin:0;padding:0}
-  #navigation a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600;padding:8px 10px;border-radius:8px;transition:all .18s ease}
-  #navigation a:hover{backdrop-filter:blur(6px);background:rgba(255,255,255,0.08);transform:translateY(-2px)}
+  #navigation{
+    list-style:none;
+    display:flex;
+    gap:22px;
+    margin:0;
+    padding:0;
+  }
+  #navigation a{
+    color:rgba(255,255,255,0.95);
+    text-decoration:none;
+    font-weight:600;
+    padding:8px 10px;
+    border-radius:8px;
+    transition:all .18s ease;
+  }
+  #navigation a:hover{
+    backdrop-filter:blur(6px);
+    background:rgba(255,255,255,0.1);
+    transform:translateY(-2px);
+  }
 
   /* hero */
-  .hero{width:100%;max-width:var(--max-width);text-align:center;margin-top:26px}
-  .hero h1{font-size:48px;margin:18px 0 8px;letter-spacing:6px;font-weight:700}
-  .hero p{margin:0 auto;max-width:680px;font-size:16px;color:rgba(255,255,255,0.92);line-height:1.6}
-  #xiahuaxian{width:120px;height:6px;background:linear-gradient(90deg,var(--accent),#FFD37A);border-radius:6px;margin:14px auto}
+  .hero{
+    width:100%;
+    max-width:var(--max-width);
+    text-align:center;
+    margin-top:26px;
+  }
+  .hero h1{
+    font-size:48px;
+    margin:18px 0 8px;
+    letter-spacing:6px;
+    font-weight:700;
+  }
+  .hero p{
+    margin:0 auto;
+    max-width:680px;
+    font-size:16px;
+    color:rgba(255,255,255,0.92);
+    line-height:1.6;
+  }
 
-  /* content area */
-  #content{width:100%;max-width:var(--max-width);margin:36px auto;padding:20px}
-  .paragraph{background:linear-gradient(180deg,rgba(255,255,255,0.9),var(--card));border-radius:14px;box-shadow:0 6px 18px rgba(28,20,40,0.06);overflow:hidden;margin-bottom:18px}
-  .paragraph h3{font-weight:600;font-size:24px;padding:22px 20px 6px;color:var(--primary);text-align:left}
-  .paragraph p{padding:0 20px 22px;color:var(--muted);line-height:1.8;font-size:15px}
+  #xiahuaxian{
+    width:120px;
+    height:6px;
+    background:linear-gradient(90deg,var(--accent),#A3D4FA);
+    border-radius:6px;
+    margin:14px auto;
+  }
+
+  /* content */
+  #content{
+    width:100%;
+    max-width:var(--max-width);
+    margin:36px auto;
+    padding:20px;
+  }
+  .paragraph{
+    background:linear-gradient(180deg,rgba(255,255,255,0.96),var(--card));
+    border-radius:14px;
+    box-shadow:0 6px 18px rgba(40,60,80,0.08);
+    overflow:hidden;
+    margin-bottom:18px;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .paragraph:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(40,60,80,0.12);
+  }
+  .paragraph h3{
+    font-weight:600;
+    font-size:24px;
+    padding:22px 20px 6px;
+    color:var(--primary);
+    text-align:left;
+  }
+  .paragraph p{
+    padding:0 20px 22px;
+    color:var(--muted);
+    line-height:1.8;
+    font-size:15px;
+  }
 
   /* footer */
-  #footer{width:100%;padding:24px 0;background:transparent;border-top:1px solid rgba(34,34,34,0.04)}
-  #footer span{display:block;text-align:center;color:var(--muted);font-size:13px}
+  #footer{
+    width:100%;
+    padding:24px 0;
+    background:transparent;
+    border-top:1px solid rgba(34,34,34,0.04);
+  }
+  #footer span{
+    display:block;
+    text-align:center;
+    color:var(--muted);
+    font-size:13px;
+  }
 
-  /* to-top button */
-  #to-top{position:fixed;right:28px;bottom:28px;width:52px;height:52px;border-radius:10px;background:linear-gradient(180deg,#fff, #f3f3f6);box-shadow:0 6px 18px rgba(40,30,60,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:0;transform:translateY(16px);transition:all .25s ease}
-  #to-top.show{opacity:1;transform:none}
-  #to-top::after{content:'↑';font-weight:700;color:var(--primary)}
+  /* to-top */
+  #to-top{
+    position:fixed;
+    right:28px;
+    bottom:28px;
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    background:linear-gradient(180deg,#fff, #f3f7fa);
+    box-shadow:0 6px 18px rgba(40,60,80,0.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    opacity:0;
+    transform:translateY(16px);
+    transition:all .25s ease;
+  }
+  #to-top.show{opacity:1;transform:none;}
+  #to-top::after{
+    content:'↑';
+    font-weight:700;
+    color:var(--primary);
+  }
 
   /* responsive */
   @media (max-width:720px){
-    .hero h1{font-size:34px}
-    #navigation{gap:12px}
-    .paragraph h3{font-size:20px}
-    #content{padding:12px}
+    .hero h1{font-size:34px;}
+    #navigation{gap:12px;}
+    .paragraph h3{font-size:20px;}
+    #content{padding:12px;}
   }
   </style>
 </head>
@@ -88,8 +206,8 @@
     </div>
 
     <div class="hero">
-      <h1>welcome</h1>
-      <div id="xiahuaxian"> </div>
+      <h1>Welcome</h1>
+      <div id="xiahuaxian"></div>
       <p>这是一个阳涛让我搭建的网站，我会把它做成最简单的样子。</p>
     </div>
   </header>
@@ -97,12 +215,12 @@
   <main id="content">
     <section class="paragraph">
       <h3>关于网站</h3>
-      <p>这是一个为小船做的网站，可以展示放映档案、电影文章，但是最好改成中英双语的，不然怎么申请戛纳证？。</p>
+      <p>这是一个为小船做的网站，可以展示放映档案、电影文章，也希望未来能支持中英双语。</p>
     </section>
 
     <section class="paragraph">
       <h3>关于主理人</h3>
-      <p>阳涛是...。</p>
+      <p>阳涛是一位热爱电影的人，正在让小船驶向更远的地方。</p>
     </section>
   </main>
 
@@ -120,7 +238,7 @@
       else toTop.classList.remove('show');
     });
 
-    // smooth scroll for anchor links
+    // smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         e.preventDefault();
