@@ -1,79 +1,195 @@
-<!-- archive.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Little Boat - Archive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-  :root{
-    --primary:#6D4BA7;
-    --accent:#F6A623;
-    --muted:#666;
-    --card:#FFF;
-    --max-width:980px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{font-family:'Noto Sans SC','Inter',sans-serif;background:#fff5f5;color:#333}
 
-  #head{width:100%;min-height:320px;padding:28px 20px;background:#ff6b6b;color:white;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .top-row{width:100%;max-width:var(--max-width);display:flex;justify-content:space-between;align-items:center}
-  #top{color:white;text-decoration:none;font-weight:700;font-size:18px}
-  #navigation{list-style:none;display:flex;gap:20px}
-  #navigation a{color:white;text-decoration:none;font-weight:600;transition:0.2s}
-  #navigation a:hover{opacity:0.8}
-  #head h1{font-size:48px;margin-top:40px}
-  #xiahuaxian{width:120px;height:6px;background:linear-gradient(90deg,var(--accent),#FFD37A);border-radius:6px;margin:14px auto}
-  #head h2{font-size:18px;font-weight:400;margin-top:4px}
-
-  #content{max-width:var(--max-width);margin:40px auto;padding:0 20px}
-  .paragraph{background:var(--card);border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.05);margin-bottom:20px;padding:24px}
-  .paragraph a{color:var(--primary);text-decoration:none;font-size:16px}
-  .paragraph a:hover{text-decoration:underline}
-  ul{list-style:none;padding-left:0;line-height:1.8}
-
-  #footer{border-top:1px solid #eee;padding:20px 0;text-align:center;font-size:13px;color:#999}
-  #to-top{position:fixed;right:28px;bottom:28px;width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,#fff,#f3f3f6);box-shadow:0 6px 18px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:0;transform:translateY(16px);transition:all .25s ease}
-  #to-top.show{opacity:1;transform:none}
-  #to-top::after{content:'↑';color:var(--primary);font-weight:700}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/archive.css" />
 </head>
 <body>
-  <header id="head">
-    <div class="top-row">
-      <a id="top" href="/">Little Boat</a>
-      <nav>
-        <ul id="navigation">
-          <li><a href="/">Home</a></li>
-          <li><a href="/html/archive.html">Archive</a></li>
-          <li><a href="/html/about.html">About</a></li>
-        </ul>
-      </nav>
+  <div id="page-top"></div>
+
+  <!-- Keep current nav: brand left, links right, logo centered -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
     </div>
-    <h1>Archive</h1>
-    <div id="xiahuaxian"></div>
-    <h2>Share</h2>
+
+    <!-- centered logo -->
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/archive.html">Archive</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
   </header>
 
-  <main id="content">
-    <div class="paragraph">
-      <ul>
-        <li><a target="_blank" href="../article/1.pdf">第一个</a></li>
-        <li><a target="_blank" href="../article/2.pdf">第二个</a></li>
-      </ul>
-    </div>
+  <main>
+    <!-- 2. Intro section (same style idea as About hero) -->
+    <section class="archive-hero">
+      <div class="archive-hero-inner">
+        <h1>Archive</h1>
+        <p>
+          The Archive gathers records of Little Boat's past screenings and related events:
+          programs, notes, posters, photos, and fragments of response. It is a slow-growing log
+          of where we have shown films, with whom, and under what circumstances—so that each
+          small event remains visible, linkable, and available as a reference for future projects.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. Timeline body -->
+    <section class="archive-body">
+      <div class="archive-inner">
+        <div class="timeline">
+          <!-- 3.4 vertical line handled by CSS ::before -->
+
+          <!-- 2025 -->
+          <div class="timeline-year">
+            <div class="timeline-year-label">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year-text">2025</span>
+            </div>
+
+            <div class="timeline-events">
+              <!-- Event 3 -->
+              <article class="timeline-event">
+                <a href="/html/event-3.html" class="event-image-link">
+                  <div class="event-image">
+                    <img src="../image/Czech-main.JPG" alt="Event 3 still">
+                  </div>
+                </a>
+                <div class="event-text">
+                  <h3>Tell Me a Story about Kundera</h3>
+                  <p>
+                  The films touched on themes which for earlier film makers 
+                  in the communist countries had rarely managed to avoid the 
+                  objections of the censor, such as the misguided youths of 
+                  Czechoslovak society portrayed in Miloš Forman's Black Peter (1963) 
+                  and Loves of a Blonde (1965), or those caught in a surrealistic 
+                  whirlwind in Věra Chytilová's Daisies (1966) and Jaromil Jireš' 
+                  Valerie and Her Week of Wonders (1970). The films often expressed 
+                  dark and absurd humour in opposition to social realist films of the 1950s.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Event 2 -->
+              <article class="timeline-event">
+                <a href="/html/event-2.html" class="event-image-link">
+                  <div class="event-image">
+                    <img src="../image/John-main.jpg" alt="Event 2 still">
+                  </div>
+                </a>
+                <div class="event-text">
+                  <h3>FACES - John Cassavetes</h3>
+                  <p>
+                  John Nicholas Cassavetes[a] (December 9, 1929 – February 3, 1989) 
+                  was an American filmmaker and actor. He began as an actor in 
+                  film and television before helping to pioneer modern American 
+                  independent cinema as a writer and director, often self-financing, 
+                  producing, and distributing his own films.[2] He received nominations 
+                  for three Academy Awards, two BAFTA Awards, four Golden Globe Awards, 
+                  and an Emmy Award.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <!-- 2024 -->
+          <div class="timeline-year">
+            <div class="timeline-year-label">
+              <span class="timeline-dot"></span>
+              <span class="timeline-year-text">2024</span>
+            </div>
+
+            <div class="timeline-events">
+              <!-- Event 1 -->
+              <article class="timeline-event">
+                <a href="/html/event-1.html" class="event-image-link">
+                  <div class="event-image">
+                    <img src="../image/landing.png" alt="Event 1 still">
+                  </div>
+                </a>
+                <div class="event-text">
+                  <h3>Event 1 — Title of Screening</h3>
+                  <p>
+                    Description paragraph for an earlier event. Note the films, context, partners,
+                    and anything that should remain documentable for later research or programming.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <!-- more years/events can be added by repeating .timeline-year blocks -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Contact info section -->
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any research or screening-related request, you can contact us at:</p>
+        <div class="contact-pill">contact@littleboatfilm.com</div>
+      </div>
+    </section>
   </main>
 
+  <!-- 5. Footer -->
   <footer id="footer">
     <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
   </footer>
 
-  <a id="to-top" href="#head" aria-label="回到顶部"></a>
+  <!-- Back to top -->
+  <a id="to-top" href="#page-top" aria-label="回到顶部"></a>
+
   <script>
-    const toTop=document.getElementById('to-top');
-    window.addEventListener('scroll',()=>{window.scrollY>200?toTop.classList.add('show'):toTop.classList.remove('show')});
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
+    // Show / hide back-to-top
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
   </script>
 </body>
 </html>
