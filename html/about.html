@@ -1,91 +1,141 @@
-<!-- about.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Little Boat - About</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-  :root{
-    --primary:#6D4BA7;
-    --accent:#F6A623;
-    --muted:#666;
-    --card:#FFF;
-    --max-width:980px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{font-family:'Noto Sans SC','Inter',sans-serif;background:#fff;color:#333}
 
-  #head{width:100%;min-height:320px;padding:28px 20px;background:#e5e5f5;color:white;display:flex;flex-direction:column;align-items:center;text-align:center}
-  .top-row{width:100%;max-width:var(--max-width);display:flex;justify-content:space-between;align-items:center}
-  #top{color:white;text-decoration:none;font-weight:700;font-size:18px}
-  #navigation{list-style:none;display:flex;gap:20px}
-  #navigation a{color:white;text-decoration:none;font-weight:600;transition:0.2s}
-  #navigation a:hover{opacity:0.8}
-  #head h1{font-size:48px;margin-top:40px}
-  #xiahuaxian{width:120px;height:6px;background:linear-gradient(90deg,var(--accent),#FFD37A);border-radius:6px;margin:14px auto}
-  #head h2{font-size:18px;font-weight:400;margin-top:4px}
-
-  #content{max-width:var(--max-width);margin:40px auto;padding:0 20px}
-  .paragraph{background:var(--card);border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,0.05);margin-bottom:20px;padding:24px}
-  .paragraph h3{font-size:22px;color:var(--primary);margin-bottom:12px}
-  .paragraph p{color:var(--muted);line-height:1.7;font-size:15px}
-  .paragraph a{color:var(--primary);text-decoration:none}
-  .paragraph a:hover{text-decoration:underline}
-  .paragraph img{max-width:100%;border-radius:10px;margin-top:10px}
-
-  #footer{border-top:1px solid #eee;padding:20px 0;text-align:center;font-size:13px;color:#999}
-  #to-top{position:fixed;right:28px;bottom:28px;width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,#fff,#f3f3f6);box-shadow:0 6px 18px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:center;text-decoration:none;opacity:0;transform:translateY(16px);transition:all .25s ease}
-  #to-top.show{opacity:1;transform:none}
-  #to-top::after{content:'↑';color:var(--primary);font-weight:700}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/about.css" />
 </head>
 <body>
-  <header id="head">
-    <div class="top-row">
-      <a id="top" href="/">Little Boat</a>
-      <nav>
-        <ul id="navigation">
-          <li><a href="/">Home</a></li>
-          <li><a href="/html/archive.html">Archive</a></li>
-          <li><a href="/html/about.html">About</a></li>
-        </ul>
-      </nav>
+  <div id="page-top"></div>
+
+  <!-- Nav: same pattern as archive page -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
     </div>
-    <h1>About</h1>
-    <div id="xiahuaxian"></div>
-    <h2>More</h2>
+
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/archive.html">Archive</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
   </header>
 
-  <main id="content">
-    <div class="paragraph">
-      <h3>Little Boat</h3>
-      <p>We are ...</p>
-    </div>
+  <main>
+    <!-- Intro band (same structure style as archive hero) -->
+    <section class="about-hero">
+      <div class="about-hero-inner">
+        <h1>About</h1>
+        <p>
+          Little Boat is a long-term project devoted to cinema and moving images. It hosts
+          independent screenings, critical and personal writing, translation projects, and
+          collaborations with artists, programmers, and institutions. Rather than chasing spectacle,
+          Little Boat prefers a quiet, patient and continuous rhythm: building a small, steady space
+          where the works we care about can encounter the right audiences, rooms, and conversations.
+        </p>
+      </div>
+    </section>
 
-    <div class="paragraph">
-      <p><img src="../image/logo.png" alt="Little Boat logo"></p>
-    </div>
+    <!-- Main article -->
+    <section class="about-body">
+      <div class="about-inner">
+        <article class="about-article">
+          <h2>Little Boat</h2>
+          <p>
+            Little Boat takes its name from a small boat that lingers close to the shore—modest in
+            scale, but patient enough to approach images and stories that are often overlooked by
+            larger circuits and institutions. We are drawn to auteur cinema, experimental films, essay
+            films, home movies, and any delicate attempt to think through space, memory, and time.
+          </p>
+          <p>
+            In practice, Little Boat curates occasional screening programs, conversations, and reading
+            suggestions. We document each project carefully—program notes, posters, booklets, stills,
+            on-site observations—and gradually organize essays, translations, and research fragments on
+            this site, so that every small gesture leaves a visible and traceable record.
+          </p>
+          <p>
+            We believe that steady, attentive documentation matters more than one-off “grand events.”
+            The Archive section is therefore designed as a slow-growing resource: collecting programming
+            intentions, collaborating venues, audience responses, and the ideas that emerge along the
+            way, to offer open references for future curating, writing, and study.
+          </p>
+          <p>
+            Little Boat welcomes collaboration with cinemas, independent screening spaces, publishers,
+            writers, and filmmakers themselves. If you are working on a film, a book, or a cross-media
+            project that might find a home on this small boat, we would be glad to be in touch.
+          </p>
 
-    <div class="paragraph">
-      <h3>联系</h3>
-      <p>
-        <a href="http://www.littleboatfilm.com" target="_blank">Blog：littleboatfilm.com</a><br><br>
-        <a href="https://mp.weixin.qq.com/s/dmg-d6HwTMFCEOtvnOxJSw" target="_blank">Wechat: 小小船LittleBoat</a>
-      </p>
-    </div>
+          <figure class="about-figure">
+            <img src="../image/boat.jpg" alt="Little Boat" class="about-image" />
+            <figcaption>E la nave va, And the Ship Sails On.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact section: SAME as archive page (style + structure) -->
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any questions, collaborations or screening inquiries related to Little Boat, please write to:</p>
+        <div class="contact-pill">contact@littleboatfilm.com</div>
+      </div>
+    </section>
   </main>
 
   <footer id="footer">
     <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
   </footer>
 
-  <a id="to-top" href="#head" aria-label="回到顶部"></a>
+  <a id="to-top" href="#page-top" aria-label="回到顶部"></a>
+
   <script>
-    const toTop=document.getElementById('to-top');
-    window.addEventListener('scroll',()=>{window.scrollY>200?toTop.classList.add('show'):toTop.classList.remove('show')});
-    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
+    // Back to top visibility
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll for in-page anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
   </script>
 </body>
 </html>
