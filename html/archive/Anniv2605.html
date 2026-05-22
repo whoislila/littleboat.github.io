@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Little Boat - Anniv2605</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/event-detail.css" />
+</head>
+<body>
+  <div id="page-top"></div>
+
+  <!-- 1. Same nav as Archive page -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
+    </div>
+
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/screening.html">Screening</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
+  </header>
+
+  <main>
+    <!-- 2. Intro section with gradient -->
+    <section class="event-hero">
+      <div class="event-hero-inner">
+        <!-- 2.1 Back to Archive -->
+        <a href="/html/screening.html" class="back-link">&lt; Back to Screening</a>
+
+        <div class="event-hero-content">
+          <div class="event-hero-text">
+            <!-- 2.2 Title + description -->
+            <h1>Little Boat 2nd Anniversary Screening</h1>
+            <p>For our second anniversary, Little Boat gathers four films that trace the spirit of feminist cinema and the women's movement. Varda's One Sings, the Other Doesn't follows a decade of friendship and emancipation; Chytilová's Something Different sets an athlete against a housewife; and the camera turns on itself in Delphine and Carole and Be Pretty and Shut Up!, where actresses and activists seize the means of representation. Together they form a portrait of women looking, speaking, and refusing to stay silent.</p>
+          </div>
+
+          <!-- 2.2 Image on the right -->
+          <div class="event-hero-image">
+            <img src="../../image/Anniv2605/main.jpg" alt="Anniv2605">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. Main body with carousel -->
+    <section class="event-body">
+      <div class="event-body-inner">
+        <!-- Left: film text (static position, content changes) -->
+        <div class="film-info">
+          <h2 id="film-title"></h2>
+          <p id="film-meta" class="film-meta"></p>
+          <br>
+          <p id="film-cast" class="film-cast"></p>
+        </div>
+
+        <!-- Right: carousel + description -->
+        <div class="film-visual">
+        <div class="carousel-window">
+            <button class="carousel-arrow left" aria-label="Previous film">&#8249;</button>
+
+            <div class="carousel-viewport"><div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="../../image/Anniv2605/1.jpg" alt="Screening 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Anniv2605/2.jpg" alt="Screening 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Anniv2605/3.jpg" alt="Screening 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/Anniv2605/4.jpg" alt="Screening 4">
+            </div>
+            </div></div>
+
+            <button class="carousel-arrow right" aria-label="Next film">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+        </div>
+
+        <p id="film-description" class="film-description"></p>
+        </div>
+
+
+          <!-- 4.1 / 4.3 Film description (aligned with image, text fades) -->
+          <p id="film-description" class="film-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact (same as Archive) -->
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any research or screening-related request, you can contact us at:</p>
+        <div class="contact-pills">
+          <div class="contact-pill">yangtao0410@gmail.com</div>
+          <div class="contact-pill">tikicai03@gmail.com</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Footer (same as Archive) -->
+  <footer id="footer">
+    <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
+  </footer>
+
+  <!-- Back to top -->
+  <a id="to-top" href="#page-top" aria-label="Back to top"></a>
+
+  <script>
+    // Back-to-top visibility
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // 4.2 / 4.3 Carousel logic
+    const films = [
+      {
+        title: "One Sings, the Other Doesn't",
+        meta: "1977 / Directed by Agnès Varda",
+        cast: "Cast: Thérèse Liotard, Valérie Mairesse, Robert Dadiès",
+        description: "The intertwined lives of two women in 1970s France, set against the progress of the women's movement in which Agnes Varda was involved. Pomme and Suzanne meet when Pomme helps Suzanne obtain an abortion after a third pregnancy which she cannot afford. They lose contact but meet again ten years later. Pomme has become an unconventional singer, Suzanne a serious community worker - despite the contrast they remain friends and share in the various dramas of each others' lives, in the process affirming their different female identities. "
+      },
+      {
+        title: "Something Different",
+        meta: "1963 / Directed by Věra Chytilová",
+        cast: "Cast: Věra Uzelacová, Josef Langmiler, Jiří Kode",
+        description: "In her first feature, Věra Chytilová uses a combination of documentary and fiction film techniques to tell two stories in counterpoint. The first follows Olympic champion gymnast Eva Bosáková, who contemplates retirement as she undergoes a gruelling training schedule; the second, a housewife who is unappreciated and ignored by her husband."
+      },
+      {
+        title: "Delphine and Carole",
+        meta: "2019 / Directed by Callisto McNulty",
+        cast: "Cast: Delphine Seyrig, Carole Roussopoulos, Alexandra Roussopoulos",
+        description: "In the 70s, actress Delphine Seyrig and director Carole Roussopoulos, both militant feminists, were the pioneers of video activism in France. They documented the demonstrations of French feminists and used the new technologies to counter the poor representation of women in the public media."
+      },
+      {
+        title: "Be Pretty and Shut Up!",
+        meta: "1981 / Directed by Delphine Seyrig",
+        cast: "Cast: Delphine Seyrig, Jill Clayburgh, Marie Dubois",
+        description: "The film is a series of interviews with various well-known film actresses, including Jenny Agutter, Maria Schneider, and Jane Fonda. The title, which is borrowed from a 1958 film with the same name by Marc Allegret, refers to the sense the actresses have of what is expected of them by the film industry."
+      }
+    ];
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+
+    const filmTitleEl = document.getElementById('film-title');
+    const filmMetaEl = document.getElementById('film-meta');
+    const filmCastEl = document.getElementById('film-cast');
+    const filmDescEl = document.getElementById('film-description');
+
+    let currentIndex = 0;
+
+    function updateText(index) {
+      // fade out
+      [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        const film = films[index];
+        filmTitleEl.textContent = film.title;
+        filmMetaEl.textContent = film.meta;
+        filmCastEl.textContent = film.cast;
+        filmDescEl.textContent = film.description;
+
+        // fade in
+        [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+          el.classList.remove('fade-out');
+          el.classList.add('fade-in');
+        });
+      }, 200); // brief overlap before new text
+    }
+
+    function updateCarousel(index) {
+      // move images horizontally
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      // update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      // update text
+      updateText(index);
+    }
+
+    function goTo(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    }
+
+    if (leftArrow) leftArrow.addEventListener('click', () => goTo(currentIndex - 1));
+    if (rightArrow) rightArrow.addEventListener('click', () => goTo(currentIndex + 1));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.index);
+        goTo(idx);
+      });
+    });
+
+    // init
+    if (films.length > 0) updateCarousel(0);
+  </script>
+</body>
+</html>
