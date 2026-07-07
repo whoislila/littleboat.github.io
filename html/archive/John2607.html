@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Little Boat - Anniv2605</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/event-detail.css" />
+</head>
+<body>
+  <div id="page-top"></div>
+
+  <!-- 1. Same nav as Archive page -->
+  <header class="site-header">
+    <div class="site-brand">
+      <a href="/#top">Little Boat</a>
+    </div>
+
+    <div class="site-logo-center">
+      <a href="/#top">
+        <img src="../../image/logo.png" alt="Little Boat logo">
+      </a>
+    </div>
+
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/html/screening.html">Screening</a>
+      <a href="/html/about.html">About</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      Menu
+    </button>
+  </header>
+
+  <main>
+    <!-- 2. Intro section with gradient -->
+    <section class="event-hero">
+      <div class="event-hero-inner">
+        <!-- 2.1 Back to Archive -->
+        <a href="/html/screening.html" class="back-link">&lt; Back to Screening</a>
+
+        <div class="event-hero-content">
+          <div class="event-hero-text">
+            <!-- 2.2 Title + description -->
+            <h1>Cassavetes and His Echoes</h1>
+            <p>This program begins with John Cassavetes, the improvisatory fire of Shadows and the nocturnal desperation of The Killing of a Chinese Bookie, and traces his restless spirit through the work of filmmakers who inherited his commitment to raw, unguarded human truth. Elaine May's Mikey and Nicky unleashes two of Cassavetes' own actors into a long night of betrayal; the Safdie Brothers' Heaven Knows What channels his street-level intensity into the chaos of addiction; Altman's Kansas City swings with his improvisatory nerve; Mekas's Reminiscences of a Journey to Lithuania shares his deeply personal mode of filmmaking; and Hamaguchi's Intimacies extends his faith that performance can reveal what life conceals. Seven films, one shared conviction: the camera belongs closest to the human face.
+               </div>
+
+          <!-- 2.2 Image on the right -->
+          <div class="event-hero-image">
+            <img src="../../image/John2607/main.jpg" alt="John2607">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 4. Main body with carousel -->
+    <section class="event-body">
+      <div class="event-body-inner">
+        <!-- Left: film text (static position, content changes) -->
+        <div class="film-info">
+          <h2 id="film-title"></h2>
+          <p id="film-meta" class="film-meta"></p>
+          <br>
+          <p id="film-cast" class="film-cast"></p>
+        </div>
+
+        <!-- Right: carousel + description -->
+        <div class="film-visual">
+        <div class="carousel-window">
+            <button class="carousel-arrow left" aria-label="Previous film">&#8249;</button>
+
+            <div class="carousel-viewport"><div class="carousel-track">
+            <div class="carousel-slide">
+                <img src="../../image/John2607/1.jpg" alt="Screening 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/John2607/2.jpg" alt="Screening 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/John2607/3.jpg" alt="Screening 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="../../image/John2607/4.jpg" alt="Screening 4">
+            </div>
+            <div class="carousel-slide">
+              <img src="../../image/John2607/5.jpg" alt="Screening 5">
+            </div>
+            <div class="carousel-slide">
+              <img src="../../image/John2607/6.jpg" alt="Screening 6">
+            </div>
+            <div class="carousel-slide">
+              <img src="../../image/John2607/7.jpg" alt="Screening 7">
+            </div>
+            </div></div>
+
+            <button class="carousel-arrow right" aria-label="Next film">&#8250;</button>
+        </div>
+
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span>
+            <span class="dot" data-index="4"></span>
+            <span class="dot" data-index="5"></span>
+            <span class="dot" data-index="6"></span>
+        </div>
+
+        <p id="film-description" class="film-description"></p>
+        </div>
+
+
+          <!-- 4.1 / 4.3 Film description (aligned with image, text fades) -->
+          <p id="film-description" class="film-description"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Contact (same as Archive) -->
+    <section class="archive-contact">
+      <div class="archive-contact-inner">
+        <div class="contact-divider"></div>
+        <p>For any research or screening-related request, you can contact us at:</p>
+        <div class="contact-pills">
+          <div class="contact-pill">yangtao0410@gmail.com</div>
+          <div class="contact-pill">tikicai03@gmail.com</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Footer (same as Archive) -->
+  <footer id="footer">
+    <span>Copyright © 2025 littleboatfilm.com v1.0, All rights reserved</span>
+  </footer>
+
+  <!-- Back to top -->
+  <a id="to-top" href="#page-top" aria-label="Back to top"></a>
+
+  <script>
+    // Back-to-top visibility
+    const toTop = document.getElementById('to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 220) {
+        toTop.classList.add('show');
+      } else {
+        toTop.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll anchors
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    }
+
+    // 4.2 / 4.3 Carousel logic
+    const films = [
+      {
+        title: "Shadows",
+        meta: "1958 / Directed by John Cassavetes",
+        cast: "Cast: Ben Carruthers, Lelia Goldoni, Hugh Hurd",
+        description: "The relationship between Lelia, a light-skinned black woman, and Tony, a white man is put in jeopardy when Tony meets Lelia's darker-skinned jazz singer brother, Hugh, and discovers that her racial heritage is not what he thought it was."
+      },
+      {
+        title: "The Killing of a Chinese Bookie",
+        meta: "1976 / Directed by John Cassavetes",
+        cast: "Cast: Ben Gazzara, Timothy Carey, Seymour Cassel",
+        description: "Cosmo Vittelli, the proprietor of a sleazy, low-rent Hollywood cabaret, has a real affection for the women who strip in his peepshows and the staff who keep up his dingy establishment. He also has a major gambling problem that has gotten him in trouble before. When Cosmo loses big-time at an underground casino run by mobster Mort, he isn't able to pay up. Mort then offers Cosmo the chance to pay back his debt by knocking off a pesky, Mafia-protected bookie."
+      },
+      {
+        title: "Heaven Knows What",
+        meta: "2014 / Directed by Benny Safdie, Josh Safdie",
+        cast: "Cast: Arielle Holmes, Caleb Landry Jones, Eléonore Hendricks",
+        description: "A young heroin addict roams the streets of New York to panhandle and get her next fix, while her unstable boyfriend drifts in and out of her life at random."
+      },
+      {
+        title: "Kansas City",
+        meta: "1996 / Directed by Robert Altman",
+        cast: "Cast: Jennifer Jason Leigh, Miranda Richardson, Harry Belafonte",
+        description: "A pair of kidnappings expose the complex power dynamics within the corrupt and unpredictable workings of 1930s Kansas City."
+      },
+      {
+        title: "Reminiscences of a Journey to Lithuania",
+        meta: "1972 / Directed by Jonas Mekas",
+        cast: "Cast: Pola Chapelle, Peter Kubelka, Adolfas Mekas",
+        description: "Jonas Mekas weaves an elegiac diary film from his 1971–72 return to Lithuania, chronicling a visit to his birthplace of Semeniškiai after decades in exile. Blending personal memory with documentary observation, the film becomes both a portrait of homecoming and a meditation on displacement, family, and the passage of time."
+      },
+      {
+        title: "Intimacies",
+        meta: "2012 / Directed by Ryusuke Hamaguchi",
+        cast: "Cast: Rei Hirano, Ryo Sato, Mikio Tayama",
+        description: "Hamaguchi wrote and directed this film as a graduation project for the students at ENBU Seminar (film and theater school in Tokyo) when he taught there. It is a three-part film: The first part is a documentary-style production of a play; Then the actual full stage production of the play; and the epilogue. Poetry and written words play the central role in the movie."
+      },
+      {
+        title: "Mikey and Nicky",
+        meta: "1976 / Directed by Elaine May",
+        cast: "Cast: Peter Falk, John Cassavetes, Ned Beatty",
+        description: "Nick is desperate, holed up in a cheap hotel, suffering from an ulcer and convinced that a local mob boss wants him killed. Desperate and terrified, he calls Mikey, his friend since childhood and a fellow gangster. So begins a long night…"
+      }
+    ];
+
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(document.querySelectorAll('.dot'));
+    const leftArrow = document.querySelector('.carousel-arrow.left');
+    const rightArrow = document.querySelector('.carousel-arrow.right');
+
+    const filmTitleEl = document.getElementById('film-title');
+    const filmMetaEl = document.getElementById('film-meta');
+    const filmCastEl = document.getElementById('film-cast');
+    const filmDescEl = document.getElementById('film-description');
+
+    let currentIndex = 0;
+
+    function updateText(index) {
+      // fade out
+      [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+        el.classList.remove('fade-in');
+        el.classList.add('fade-out');
+      });
+
+      setTimeout(() => {
+        const film = films[index];
+        filmTitleEl.textContent = film.title;
+        filmMetaEl.textContent = film.meta;
+        filmCastEl.textContent = film.cast;
+        filmDescEl.textContent = film.description;
+
+        // fade in
+        [filmTitleEl, filmMetaEl, filmCastEl, filmDescEl].forEach(el => {
+          el.classList.remove('fade-out');
+          el.classList.add('fade-in');
+        });
+      }, 200); // brief overlap before new text
+    }
+
+    function updateCarousel(index) {
+      // move images horizontally
+      const offset = -index * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      // update dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      // update text
+      updateText(index);
+    }
+
+    function goTo(index) {
+      if (index < 0) index = slides.length - 1;
+      if (index >= slides.length) index = 0;
+      currentIndex = index;
+      updateCarousel(currentIndex);
+    }
+
+    if (leftArrow) leftArrow.addEventListener('click', () => goTo(currentIndex - 1));
+    if (rightArrow) rightArrow.addEventListener('click', () => goTo(currentIndex + 1));
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = Number(dot.dataset.index);
+        goTo(idx);
+      });
+    });
+
+    // init
+    if (films.length > 0) updateCarousel(0);
+  </script>
+</body>
+</html>
